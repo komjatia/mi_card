@@ -11,48 +11,53 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.teal,
         body: SafeArea(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Container(
-                width: 100.0,
-                height: 100.0,
-                color: Colors.red,
-                child: Center(
-                  child: Text('text'),
-                ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              CircleAvatar(
+                radius: 50.0,
+                backgroundImage: AssetImage('images/me.jpeg'),
               ),
-              // SizedBox(
-              //   width: 20.0,
-              // ),
-              Column(
+              Text("Akos Komjati",style: TextStyle(
+                fontSize: 26.0,
+                color: Colors.white,
+                fontFamily: "Pacifico",
+                fontWeight: FontWeight.bold
+              ),
+              ),
+              Text("Developer",style: TextStyle(
+                  fontSize: 24.0,
+                  color: Colors.white,
+                  fontFamily: "Pacifico",
+                  fontWeight: FontWeight.normal,
+                  letterSpacing: 2.0
+              ),
+              ),
+             SizedBox(
+               height: 20.0,
+               width: 150.0,
+               child: Divider(
+                 color: Colors.white60,
+               ),
+             ),
+             Card(
+               color: Colors.white,
+               margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 50.0),
+                 child: ListTile(
+                   leading: Icon(Icons.smartphone,color: Colors.teal,),
+                   title: Text("+36307972426"),
+                 )
 
-               mainAxisAlignment: MainAxisAlignment.center,
-               children: <Widget>[
-                 Container(
-                   height: 100.0,
-                   width: 100.0,
-                   color: Colors.yellowAccent,
-                   child: Center(child: Text("container 2")),
-                 ),
-                 Container(
-                   height: 100.0,
-                   width: 100.0,
-                   color: Colors.lime,
-                   child: Center(child: Text("container 2")),
-                 ),
-               ],
+             ),
+              Card(
+                  color: Colors.white,
+                  margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 50.0),
+                  child: ListTile(
+                    leading: Icon(Icons.email, color: Colors.teal,),
+                    title: Text("komjati.akos156@icloud.com"),
+                  )
+
               ),
-              Container(
-                height: 100.0,
-                width: 100.0,
-                color: Colors.blue,
-                child: Center(child: Text("container 3")),
-              ),
-              // Container(
-              //   width: double.infinity,
-              // )
             ],
           )
         ),
